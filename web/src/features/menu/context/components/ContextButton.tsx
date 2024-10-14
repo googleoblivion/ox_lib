@@ -93,13 +93,15 @@ const ContextButton: React.FC<{
         <HoverCard.Target>
           <Button
             classNames={{ inner: classes.inner, label: classes.label, root: classes.button }}
-            onClick={() =>
-              !button.disabled && !button.readOnly
-                ? button.menu
-                  ? openMenu(button.menu)
-                  : clickContext(buttonKey)
-                : null
-            }
+            onClick={() => {
+              if (!button.disabled && !button.readOnly) {
+                clickContext(buttonKey); // Always trigger the clickContext action
+
+                if (button.menu) {
+                  openMenu(button.menu); // Open the menu if it exists
+                }
+              }
+            }}
             variant="default"
             disabled={button.disabled}
           >

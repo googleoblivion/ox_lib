@@ -16,8 +16,8 @@ const openMenu = (id: string | undefined) => {
 const useStyles = createStyles((theme) => ({
   container: {
     position: 'absolute',
-    top: '15%',
-    right: '25%',
+    top: '3%',
+    right: '3%',
     width: 320,
     height: 580,
   },

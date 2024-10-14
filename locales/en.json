@@ -10,6 +10,8 @@
       "locale": "Change locale",
       "locale_description": "Current language: ${language} (%s)",
       "notification_audio": "Notification audio",
+      "primaryColor": "Primary Color",
+      "primaryShade": "Color Shade",
       "notification_position": "Notification position"
     },
     "position": {

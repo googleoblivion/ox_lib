@@ -1,6 +1,7 @@
 import { Context, createContext, useContext, useEffect, useState } from 'react';
 import { MantineColor } from '@mantine/core';
 import { fetchNui } from '../utils/fetchNui';
+import { useNuiEvent } from '../hooks/useNuiEvent';
 
 interface Config {
   primaryColor: MantineColor;
@@ -21,8 +22,19 @@ const ConfigProvider: React.FC<{ children: React.ReactNode }> = ({ children }) =
   });
 
   useEffect(() => {
+    // Initial fetch
     fetchNui<Config>('getConfig').then((data) => setConfig(data));
   }, []);
+
+  useNuiEvent<Config>('updateColorSettings', (data) => {
+    const { primaryColor, primaryShade } = data;
+    console.log(primaryColor, primaryShade);
+    setConfig((prevConfig) => ({
+      ...prevConfig,
+      primaryColor,
+      primaryShade,
+    }));
+  });
 
   return <ConfigCtx.Provider value={{ config, setConfig }}>{children}</ConfigCtx.Provider>;
 };

@@ -25,7 +25,7 @@ local settings = require 'resource.settings'
 function lib.notify(data)
     local sound = settings.notification_audio and data.sound
     data.sound = nil
-    data.position = data.position or settings.notification_position
+    data.position = settings.notification_position or data.position
 
     SendNUIMessage({
         action = 'notify',
