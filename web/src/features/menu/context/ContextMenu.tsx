@@ -16,8 +16,8 @@ const openMenu = (id: string | undefined) => {
 const useStyles = createStyles((theme) => ({
   container: {
     position: 'absolute',
-    top: '3%',
-    right: '3%',
+    top: '15%',
+    right: '25%',
     width: 320,
     height: 580,
   },
@@ -38,11 +38,11 @@ const useStyles = createStyles((theme) => ({
     textAlign: 'center',
   },
   buttonsContainer: {
-    height: 560,
+    height: 580,
     overflowY: 'scroll',
   },
   buttonsFlexWrapper: {
-    gap: 3,
+    gap: 6,
   },
 }));
 

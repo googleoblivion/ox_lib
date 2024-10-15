@@ -28,9 +28,11 @@ const useStyles = createStyles((theme, params: { disabled?: boolean; readOnly?: 
     height: 'fit-content',
     width: '100%',
     padding: 10,
+    transition: 'transform 0.3s ease',
     '&:hover': {
       backgroundColor: params.readOnly ? theme.colors.dark[6] : undefined,
       cursor: params.readOnly ? 'unset' : 'pointer',
+      transform: 'translateX(8px)',
     },
     '&:active': {
       transform: params.readOnly ? 'unset' : undefined,
